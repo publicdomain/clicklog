@@ -68,7 +68,14 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void OnOptionsToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            // TODO Add code
+            // Set clicked item
+            var clickedItem = (ToolStripMenuItem)e.ClickedItem;
+
+            // Toggle checked
+            clickedItem.Checked = !clickedItem.Checked;
+
+            // Set topmost
+            this.TopMost = clickedItem.Checked;
         }
 
         /// <summary>
