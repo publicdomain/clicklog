@@ -156,7 +156,11 @@ namespace ClickLog
         /// </summary>
         private void Subscribe()
         {
-            // TODO Add code
+            m_GlobalHook = Hook.GlobalEvents();
+
+            m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
+
+            m_GlobalHook.MouseMoveExt += GlobalHookMouseMoveExt;
         }
 
         /// <summary>
