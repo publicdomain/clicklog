@@ -128,7 +128,12 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void OnBrowseButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open save file dialog
+            if (this.logSaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Set into text box
+                this.logFileTextBox.Text = this.logSaveFileDialog.FileName;
+            }
         }
 
         /// <summary>
