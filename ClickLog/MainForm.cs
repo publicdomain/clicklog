@@ -58,7 +58,21 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Clear text box
+            this.logFileTextBox.Clear();
+
+            // Check for Sto(p)
+            if (this.startStopButton.Text.EndsWith("p", StringComparison.InvariantCulture))
+            {
+                // Click button
+                this.startStopButton.PerformClick();
+            }
+
+            // Reset count
+            this.countCountToolStripStatusLabel.Text = "0";
+
+            // Focus text box
+            this.logFileTextBox.Focus();
         }
 
         /// <summary>
