@@ -118,7 +118,66 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void OnStartStopButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Check for Star(t) vs Sto(p)
+            if (this.startStopButton.Text.EndsWith("t", StringComparison.InvariantCulture))
+            {
+                // Open stream writer
+                try
+                {
+                    // Open file for append or overwrite
+                    this.streamWriter = new StreamWriter(this.logFileTextBox.Text, this.appendRadioButton.Checked)
+                    {
+                        // TODO Autoflush [Can be made optional]
+                        AutoFlush = true
+                    };
+                }
+                catch (Exception ex)
+                {
+                    // Inform user about exception
+                    MessageBox.Show($"{ ex.Message }", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Halt flow
+                    return;
+                }
+
+                // Change to stop
+                this.startStopButton.Text = "&Stop";
+                this.startStopButton.ForeColor = Color.Red;
+
+                // Start
+                this.Subscribe();
+            }
+            else
+            {
+                // Close stream writer
+                try
+                {
+                    // Close file
+                    if (streamWriter != null)
+                    {
+                        this.streamWriter.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Inform user about exception
+                    MessageBox.Show($"{ ex.Message }", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Halt flow
+                    return;
+                }
+
+                // Reset to start
+                this.startStopButton.Text = "&Start";
+                this.startStopButton.ForeColor = Color.DarkGreen;
+
+                // Reset status labels
+                this.xValueToolStripStatusLabel.Text = "0";
+                this.yValueToolStripStatusLabel.Text = "0";
+
+                // Stop
+                this.Unsubscribe();
+            }
         }
 
         /// <summary>
