@@ -148,7 +148,9 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void GlobalHookMouseMoveExt(object sender, MouseEventExtArgs e)
         {
-            // TODO Add code
+            // Update status labels
+            this.xValueToolStripStatusLabel.Text = e.Location.X.ToString();
+            this.yValueToolStripStatusLabel.Text = e.Location.Y.ToString();
         }
 
         /// <summary>
