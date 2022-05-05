@@ -88,7 +88,8 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void OnOriginalThreadRedditcomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open orignal thread
+            Process.Start("https://www.reddit.com/r/software/comments/uh0moz/a_program_to_get_multiple_clicked_coordinates_in/");
         }
 
         /// <summary>
