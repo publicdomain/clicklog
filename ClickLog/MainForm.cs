@@ -138,7 +138,37 @@ namespace ClickLog
         /// <param name="e">Event arguments.</param>
         private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
         {
-            // TODO Add code
+            if (e.Button == MouseButtons.Left)
+            {
+                var point = new Point(e.Location.X, e.Location.Y);
+
+                IntPtr windowHandle = WindowFromPoint(point);
+
+                // Write if not the start/stop button
+                if (this.startStopButton.Handle != windowHandle)
+                {
+                    // Add line to stream writer
+                    try
+                    {
+                        // Write current location to file
+                        this.streamWriter.WriteLine($"{e.Location.X},{e.Location.Y}");
+
+                        // Raise count
+                        this.count++;
+
+                        // Update count status label
+                        this.countCountToolStripStatusLabel.Text = this.count.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Inform user about exception
+                        MessageBox.Show($"{ ex.Message }", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        // Halt flow
+                        return;
+                    }
+                }
+            }
         }
 
         /// <summary>
