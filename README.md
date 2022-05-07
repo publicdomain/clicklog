@@ -38,7 +38,7 @@ Day #127, Week #18 @ May 07, 2022
 * Y0himba
 * Will *you* be our next supporter? :)
 
-## Support!
+## Support:
 
 ![PayPal logo](https://i.imgur.com/CSaPEFY.png) One-time Paypal @ [https://www.paypal.com/paypalme/victorvls](https://www.paypal.com/paypalme/victorvls)
 
