@@ -181,7 +181,7 @@ namespace ClickLog
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
-                $"Made for: u/Xeu1009X10{ Environment.NewLine}Reddit.com{Environment.NewLine}Day #126, Week #18 @ May 06, 2022",
+                $"Made for: u/Xeu1009X10{ Environment.NewLine}Reddit.com{Environment.NewLine}Day #127, Week #18 @ May 07, 2022",
                 licenseText,
                 this.Icon.ToBitmap())
             {
