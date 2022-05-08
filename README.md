@@ -40,7 +40,7 @@ Day #127, Week #18 @ May 07, 2022
 
 ## Support!
 
-![PayPal logo](https://i.imgur.com/CSaPEFY.png) One-time Paypal @ [www.paypal.com/paypalme/victorvls](https://www.paypal.com/paypalme/victorvls)
+![PayPal logo](https://i.imgur.com/CSaPEFY.png) One-time Paypal @ [https://www.paypal.com/paypalme/victorvls](https://www.paypal.com/paypalme/victorvls)
 
 ![Patreon logo](https://i.imgur.com/LKBj3ih.png) Join our Patreon @ [www.patreon.com/publicdomain](https://www.patreon.com/publicdomain).
 
